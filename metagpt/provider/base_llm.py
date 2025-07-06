@@ -13,6 +13,7 @@ from abc import ABC, abstractmethod
 from typing import Optional, Union
 
 from openai import AsyncOpenAI
+from anthropic import APIStatusError
 from pydantic import BaseModel
 from tenacity import (
     after_log,
@@ -250,7 +251,7 @@ class BaseLLM(ABC):
         stop=stop_after_attempt(3),
         wait=wait_random_exponential(min=1, max=60),
         after=after_log(logger, logger.level("WARNING").name),
-        retry=retry_if_exception_type(ConnectionError),
+        retry=retry_if_exception_type((ConnectionError, APIStatusError)),
         retry_error_callback=log_and_reraise,
     )
     async def acompletion_text(

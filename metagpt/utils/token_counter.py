@@ -73,6 +73,8 @@ TOKEN_COSTS = {
     "claude-3-opus-20240229": {"prompt": 0.015, "completion": 0.075},
     "claude-3-haiku-20240307": {"prompt": 0.00025, "completion": 0.00125},
     "claude-3-7-sonnet-20250219": {"prompt": 0.003, "completion": 0.015},
+    "claude-sonnet-4-20250514": {"prompt": 0.003, "completion": 0.015},
+    "claude-opus-4-20250514": {"prompt": 0.015, "completion": 0.075},
     "yi-34b-chat-0205": {"prompt": 0.0003, "completion": 0.0003},
     "yi-34b-chat-200k": {"prompt": 0.0017, "completion": 0.0017},
     "openai/gpt-4": {"prompt": 0.03, "completion": 0.06},  # start, for openrouter
@@ -293,6 +295,8 @@ TOKEN_MAX = {
     "claude-3-opus-20240229": 200000,
     "claude-3-5-sonnet-20240620": 200000,
     "claude-3-haiku-20240307": 200000,
+    "claude-sonnet-4-20250514": 200000,
+    "claude-opus-4-20250514": 200000,
     "yi-34b-chat-0205": 4000,
     "yi-34b-chat-200k": 200000,
     "openai/gpt-4": 8192,  # start, for openrouter
